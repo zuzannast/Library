@@ -19,6 +19,10 @@
     <%= f.label :author_id %><br>
     <%= f.select :author_id, @authors %>
   </div>
+  <div class="field">
+    <%= f.label :category_ids %><br>
+    <%= f.select :category_ids, @categories, {}, :multiple => true %>
+  </div>
  
 
   <div class="actions">

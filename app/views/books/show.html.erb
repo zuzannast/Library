@@ -10,5 +10,15 @@
   <%= @book.author.full_name %>
 </p>
 
+
+
+  <p>
+    <strong>Category:</strong>
+   
+	<% @book.categories.each do |category| %> 	
+	<%= category.name %> </p>
+<% end %>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back', books_path %> |
+<%= link_to 'Add Category', new_book_category_path(@book) %>

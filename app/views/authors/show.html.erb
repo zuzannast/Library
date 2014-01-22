@@ -19,4 +19,5 @@
     <% end %>
 </ul>
 <%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Back', authors_path %> | 
+<%= link_to 'Add Book', new_author_book_path(@author,@book) %>

@@ -1,0 +1,13 @@
+<h1>Książka gości biblioteki</h1>
+
+<p id="notice"><%= notice %></p>
+<p>Ostatnie wpisy:</p>
+<% @entries.each do |entry| %>
+  <div>
+ 	<div><%= entry.name %> napisał(a) <%= entry.created_at %>:</div>
+	<div><%= entry.comment %></div>
+  </div>
+<% end %>
+
+<br />
+<%= link_to "Nowy wpis", new_entry_path %>

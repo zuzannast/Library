@@ -10,24 +10,29 @@ Library::Application.routes.draw do
   #get "entries/index"
   #get "entries/new"
   #get "entries/create"
+  resources :books
+  resources :authors
   resources :entries, only: [:index, :new, :create]
-  resources :books do
-	resources :categories
-  end
-  resources :authors do
-	resources :books
-  end  
+ 
 
-=======
-  devise_for :users
+  root "entries#index"
+ #resources :books do
+#	resources :categories
+ # end
+ # resources :authors do
+#	resources :books
+#  end  
+
+#=======
+ # devise_for :users
   #get "entries/index"
   #get "entries/new"
   #get "entries/create"
-  resources :entries, only: [:index, :new, :create]
-  resources :books
-  resources :authors  
+  #resources :entries, only: [:index, :new, :create]
+  #resources :books
+  #resources :authors  
 
->>>>>>> 460cddf2143c8f0844b644c40daf46a87aa97f88
+#>>>>>>> 460cddf2143c8f0844b644c40daf46a87aa97f88
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -83,5 +88,5 @@ Library::Application.routes.draw do
   #     resources :products
   #   end
 	
-  root :to => "entries#index"
+  #root :to => "entries#index"
 end

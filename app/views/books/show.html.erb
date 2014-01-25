@@ -7,7 +7,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author.full_name %>
+  <%= @book.author.full_name %> <%link_to 'Show', @book.author %>
 </p>
 
 
@@ -15,9 +15,11 @@
   <p>
     <strong>Category:</strong>
    
+  	<%if @book.categories.empty? %>No categories<% end %>
 	<% @book.categories.each do |category| %> 
         <%= category.name %> </p>
   <% end %>
+  </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %> |

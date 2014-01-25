@@ -4,9 +4,13 @@ Library::Application.routes.draw do
   
  get "home/home"
 
+  get "search/home"
+  get "static_pages/search"
+  get "static_pages/home"
+  get "static_pages/help"
   resources :categories
   
-  devise_for :users
+  devise_for :user   #bylo users
   #get "entries/index"
   #get "entries/new"
   #get "entries/create"
@@ -16,12 +20,12 @@ Library::Application.routes.draw do
  
 
   root "entries#index"
- #resources :books do
-#	resources :categories
- # end
- # resources :authors do
-#	resources :books
-#  end  
+ resources :books do
+	resources :categories
+ end
+ resources :authors do
+	resources :books
+  end  
 
 #=======
  # devise_for :users

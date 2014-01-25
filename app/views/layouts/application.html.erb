@@ -8,11 +8,36 @@
 </head>
 <body>
 
-<% if user_signed_in? %>
-  <%= link_to "wyloguj", destroy_user_session_path, method: :delete %>
+<ul>
+    <li><%= link_to "Home", '../' %></li>
+    <li><%= link_to "Authors", '../authors' %></li>
+
+    <li><%= link_to "Books", '../books' %></li>
+    <li><%= link_to "Categories", '/../categories' %></li>
+   
+
+    <% if user_signed_in? %>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+
+    <li><%= link_to "Change password", edit_user_registration_path %></li>
+
+    <% else %>
+    <li><%= link_to "Log in", new_user_session_path %></li>
+    <% end %>
+
+    <li class="field"><%= form_tag '/search/home', method: :get do %>
+  <%= text_field_tag :q, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %></li>
+</ul>
+
+  <% if user_signed_in? %>
+    
+    <%= link_to "logout", destroy_user_session_path, method: :delete %>
   <% else %>
-  <% link_to "zaloguj", new_user_session_path %>
-<% end %>
+    <%= link_to "login", new_user_session_path %>
+  <% end %>
+  
 
 
 <%= yield %>

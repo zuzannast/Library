@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Autor:</strong> 
+<%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Back', books_path %> | <%= link_to 'Add Category', 
+new_book_category_path(@book) %>
+  <%= @book.author.full_name %> <%=link_to 'Show', @book.author %> </p> <p>
+  <strong>Kategoria:</strong>
+  
+  <% if @book.categories.empty? %>Brak kategorii<% end %>
+  <% @book.categories.each do |category| %>
+    <%= category.name %>
+  <% end %>
+  
+</p>

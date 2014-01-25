@@ -1,8 +1,8 @@
 Library::Application.routes.draw do
 
-  get "results/results"
   
- get "home/home"
+  #get "results/results"
+  #get "home/home"
 
   resources :categories
   
@@ -11,15 +11,16 @@ Library::Application.routes.draw do
   #get "entries/new"
   #get "entries/create"
   resources :entries, only: [:index, :new, :create]
-  resources :books do
-	resources :categories
-  end
-  resources :authors do
-	resources :books
-  end  
+ 
+# resources :books do
+ #	resources :categories
+ # end
+  #resources :authors do
+ #	resources :books
+ #  end  
 
-=======
-  devise_for :users
+#=======
+ # devise_for :users
   #get "entries/index"
   #get "entries/new"
   #get "entries/create"
@@ -82,6 +83,9 @@ Library::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
+  root "entries#index"
 	
-  root :to => "entries#index"
+  #root :to => "entries#index"
 end

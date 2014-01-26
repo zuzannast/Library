@@ -2,15 +2,18 @@
 
 <p>
   <strong>Book:</strong>
-  <%= link_to @reservation.book.title, @reservation.book %> </p> 
+  <%= link_to @reservation.book.title, @reservation.book %> 
+</p> 
 
 <p>
   <strong>User:</strong>
-  <%= @reservation.user.email %> </p> 
+  <%= @reservation.user.email %>
+</p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @reservation.date %> </p> 
+  <strong>Return date:</strong>
+  <%= @reservation.date %> 
+</p> 
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+<%= link_to 'Back', reservations_path %> |

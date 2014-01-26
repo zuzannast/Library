@@ -1,0 +1,35 @@
+<h1>Search</h1>
+
+<p>Your task: <%= @q %></p>
+
+<% if @books.empty? %>
+
+<% else %>
+    <strong>Books</strong>
+    <% @books.each do |book| %>
+        <p><%= link_to book.title, book %></p>
+    <% end %>
+    <%= will_paginate @books %>
+<% end %>
+
+<% if @authors.empty? %>
+<% else %>
+    <strong>Authors</strong>
+    <% @authors.each do |author| %>
+        <p><%= link_to author.full_name, author %></p>
+    <% end %>
+    <%= will_paginate @authors%>
+<% end %>
+
+<% if @categories.empty? %>
+<% else %>
+    <strong>Kategorie</strong>
+    <% @categories.each do |categories| %>
+        <p><%= link_to categories.name, categories %></p>
+    <% end %>
+    <%= will_paginate @categories%>
+<% end %>
+
+<% if will_paginate @categories %>
+<p>sjs</p>
+<% end %>

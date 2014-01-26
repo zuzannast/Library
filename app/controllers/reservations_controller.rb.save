@@ -1,13 +1,13 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :set_reservation, only: [:show, :edit, :update, :destroy] 
   before_action :set_books, only: [:new, :edit, :update, :create, :show]
   before_action :set_users, only: [:new, :edit, :update, :create]
-  before_action :authenticate_user! , expect: [:new, :show, :edit, :create, :update, :destroy]
+  before_action :authenticate_user! , expect: [:new, :show, :edit, :create, :update, :destroy] 
+
   # GET /reservations
   # GET /reservations.json
   def index
-   @user = current_user
-   @reservations = current_user.reservations
+    @reservations = Reservation.all
   end
 
   # GET /reservations/1
@@ -30,19 +30,16 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     book=Book.find_by_id(reservation_params[:book_id])
 
-    @reservation.date = Date.today + 1.month
-    @reservation.user = current_user
-    
-  
-  respond_to do |format|
-      
-	if @reservation.save
-	  format.html { redirect_to @reservation, notice: 'Reservation was succesfully created.' }
-          format.json { render action: 'show', status: :created, location: @reservation }
-  #    elsif @reservation.save
-#        UserMailer.przypomnienie(@reservation.user, @reservation.date, @reservation.book.title).deliver
-#        format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
- #       format.json { render action: 'show', status: :created, location: @reservation }
+    @reservation.date = Time.zone.now + 10.minute
+    @reservations.user = current_user
+
+    respond_to do |format|
+      if is_reserver(book)
+        format.html { render action: 'new'}
+        format json { render json: @reservation.errors, status: :unprocessable_entity }
+      if @reservation.save
+        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @reservation }
       else
         format.html { render action: 'new' }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
@@ -82,12 +79,13 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:book_id, :user_id, :date)
+#      params.require(:reservation).permit(:user, :book_id)
+	params.require(:reservation).permit(:book_id, :user_id, :date)	 
     end
-    
-    def is_reserved(book)
+
+  def is_reserved(book)
         book= Reservation.find_by_book_id(book.id)
-        if book != nil
+        if book != nil 
             return true
         else
             return false

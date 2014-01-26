@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :set_authors, only: [:new, :edit, :update, :create]
   before_action :set_categories, only: [:new, :edit, :update, :create]
+  before_action :set_reservations, only: [:show, :index, :create ]
+
 
   # GET /books
   # GET /books.json
@@ -78,12 +80,19 @@ class BooksController < ApplicationController
 	def set_authors
 		@authors = Author.find(:all).map do |author|
 			[ author.full_name, author.id]
+	  end 
 	end
 
 	def set_categories
 		@categories = Category.find(:all).map do |category|
 		  	[ category.name, category.id]
+	  end
 	end
-end
-end
-end
+
+	def set_reservations
+        	  @reservations = Reservation.find(:all).map do |reservation|
+      			[ reservation.book_id] 
+
+	end
+      end
+    end

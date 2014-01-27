@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
-      redirect_to root_path, notice: 'Dziękujemy za wpis w księdze gości! YO'
+      redirect_to root_path, notice: 'Thanks you adding your entry!'
       
     else
       render new_entry_path

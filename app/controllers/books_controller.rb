@@ -4,12 +4,12 @@ class BooksController < ApplicationController
   before_action :set_authors, only: [:new, :edit, :update, :create]
   before_action :set_categories, only: [:new, :edit, :update, :create]
   before_action :set_reservations, only: [:show, :index, :create, :new, :edit, :update, :destroy ]
-
+  require 'will_paginate/array'
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.all.sort_by(&:title).paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /books/1
@@ -30,6 +30,11 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    @book.isbn=@isbn
+    @book.year=@year
+    @book.place=@place
+    @book.publisher=@publisher
+    
 
     respond_to do |format|
       if @book.save
@@ -74,7 +79,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author_id, {:category_ids => []})
+      params.require(:book).permit(:title, :author_id, :publisher, :year, :place, :isbn, {:category_ids => []})
     end
 
 	def set_authors
@@ -95,4 +100,24 @@ class BooksController < ApplicationController
 
 	end
       end
-    end
+   
+    # def set_places
+      # @place = Place.find(:all).map do |place|
+         # [ place.name, place.id]
+      # end
+    # end
+	# def set_publishers
+      # @publishers = Publisher.find(:all).map do |publisher|
+         # [ publisher.name, publisher.id]
+      # end
+    # end
+	# def set_years
+      # @years = Year.find(:all).map do |year|
+         # [ year.name, year.id]
+      # end
+    # end def set_isbns
+      # @isbns = Isbn.find(:all).map do |isbn|
+         # [ isbn.name, isbn.id]
+      # end
+    # end
+end

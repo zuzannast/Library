@@ -1,26 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="wrapper">
+	<div id="three-column" class=container">
+		<div id="tbox1">
+		   <div class="title"><h2>Title:</h2></div>
+			 <p> <%= @book.title %> </p>
+		</div>
+		<div id="tbox2">
+		  <div class="title"><h2>Author:</h2></div>
+		 	<p> <%= @book.author.full_name %> <a href="#  class="button"><%= link_to 'Show author', @book.author %></a></p>
+		</div>
+		<div id="tbox3">
+		  <div class="title"><h2>Category:</h2></div>
+			<p><%if @book.categories.empty? %>No categories<% end %>
+		 	<% @book.categories.each do |category| %> 
+		        <%= category.name %> <a href="#"  class="button"><%= link_to 'Show category', category %></a></p>
+  			<% end %>
+		
+		</div>
+	</div>
+  
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author.full_name %> <%= link_to 'Show author', @book.author %>
-</p>
+<div id="tbox1">
+  <div class="title"><h2>Bibliographical description:</h2></div>
+<p>  <%= @book.author.last_name%><%= ', '%></p>
+<p>  <%= @book.author.first_name%><%= '. '%></p>
+<p>  <%= @book.title %><%= '. '%></p>
+<p>  <% if @book.place %><%= @book.place %><%= ': '%><% end %></p>
+<p>  <% if @book.publisher %><%= @book.publisher %><%= ', '%><% end %></p>
+<p>  <% if @book.year %><%= @book.year %><%= '. ISBN '%><% end %></p>
+<p>  <% if @book.isbn %><%= @book.isbn %><%= '. '%><% end %> </p> 
+</div>
+</div>
 
 
-
-  <p>
-    <strong>Category:</strong>
-   
-  	<%if @book.categories.empty? %>No categories<% end %>
-	<% @book.categories.each do |category| %> 
-        <%= category.name %> <%= link_to 'Show category', category %></p>
-  <% end %>
-  </p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %> |
+<%= link_to 'Edit', edit_book_path(@book) %> | 
+<%= link_to 'Back', books_path %>
 <%= link_to 'Add Category', new_book_category_path(@book) %>

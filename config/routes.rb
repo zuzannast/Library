@@ -1,34 +1,29 @@
 Library::Application.routes.draw do
 
-  resources :reservations
-  
   get "search/home"
   get "static_pages/search"
   get "static_pages/home"
   get "static_pages/help"
   resources :categories
   
-  devise_for :user
-  resources :mailer
-  #get "entries/index"
-  #get "entries/new"
-  #get "entries/create"
-  resources :books
-  resources :authors
+  devise_for :users
   resources :entries, :only => [:index, :new, :create]
- 
+  resources :authors
+  resources :books
+  resources :categories
+  resources :reservations
+  resources :mailer
+  resources :mailers 
 
-  root "entries#index"
- resources :books do
+  root "books#index"
+
+  resources :books do
 	resources :categories
  end
- resources :authors do
-	resources :books
+ resources :authors do 
+	resources :books 
   end  
 
-#=======
- # devise_for :users
-  #get "entries/index"
   #get "entries/new"
   #get "entries/create"
   #resources :entries, only: [:index, :new, :create]

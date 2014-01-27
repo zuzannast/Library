@@ -4,10 +4,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Library</title>
   <%= stylesheet_link_tag    "default", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "fonts", media: "all", "data-tubolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+  <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 
@@ -16,10 +16,14 @@
 		<div id="logo">
 			<h1><a href="#">Library</a></h1>
 		</div>
+
+
+
 	<div id="menu">
 		<ul>
-		    <li class="current_page_item"><%= link_to "BOOKS", '../' %></li>
+		    <li class="current_page_item"><%= link_to "Homepage", '../' %></li>
 		    <li><%= link_to "Authors", authors_path %></li>
+		    <li><%= link_to "Books", books_path %></li>
 		    <li><%= link_to "Categories", categories_path %></li>
 		    <li><%= link_to "Entries", entries_path %></li>
 		
@@ -33,8 +37,7 @@
 		    <% else %>
 		    <li><%= link_to "Log in", new_user_session_path %></li>
 		    <% end %>
-		
-		
+		</ul>
 		    <li class="field"><%= form_tag '/search/home', method: :get do %>
 			  <%= text_field_tag :q, params[:search] %>
 			  <%= submit_tag "Search", :name => nil %>
@@ -42,10 +45,8 @@
 		</ul>  
 	</div>
   </div>
-</div>	
-
-<div id="banner"></div>
-
+	<div id="banner" class="container"><img src="images/banner.jpg" width="1200" height="400" alt="" /></div>
+</div>
 <div id="page-wrapper">
 	<div id="page" class="container">
 		<div id="content">
@@ -53,11 +54,5 @@
 		</div>
 	</div>
 </div>
-
-<div id="copyright" class="container">
-	<p>Copyright (c) 2014 Zuzanna St. | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
-</div>
-
-
 </body>
 </html>

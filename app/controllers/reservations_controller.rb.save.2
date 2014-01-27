@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     book=Book.find_by_id(reservation_params[:book_id])
 
-    @reservation.date = Time.zone.now + 10.minute
+    @reservation.date = Date.today + 1.month
     @reservation.user = current_user
     
   
@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
           format.json { render action: 'show', status: :created, location: @reservation }
       elsif @reservation.save
         UserMailer.reminder(@reservation.user, @reservation.date, @reservation.book.title).deliver
-        format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
+       format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
        format.json { render action: 'show', status: :created, location: @reservation }
       else
         format.html { render action: 'new' }

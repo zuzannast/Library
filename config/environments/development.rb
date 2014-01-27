@@ -26,4 +26,15 @@ Library::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp 
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain, 
+  :address => "smtp.mailgun.org",
+  :port => 587, 
+  :domain => "sandbox47426.mailgun.org", 
+  :user_name => "postmaster@sandbox47426.mailgun.org", 
+  :password => "8c1olyvjbyo9"
+}
+
 end

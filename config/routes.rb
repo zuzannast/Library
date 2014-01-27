@@ -1,24 +1,21 @@
 Library::Application.routes.draw do
 
   resources :reservations
-
-  get "results/results"
   
- get "home/home"
-
   get "search/home"
   get "static_pages/search"
   get "static_pages/home"
   get "static_pages/help"
   resources :categories
   
-  devise_for :user   #bylo users
+  devise_for :user
+  resources :mailer
   #get "entries/index"
   #get "entries/new"
   #get "entries/create"
   resources :books
   resources :authors
-  resources :entries, only: [:index, :new, :create]
+  resources :entries, :only => [:index, :new, :create]
  
 
   root "entries#index"

@@ -6,8 +6,8 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-   @user = current_user
-   @reservations = current_user.reservations
+    @user = current_user
+    @reservations = current_user.reservations
   end
 
   # GET /reservations/1
@@ -30,19 +30,20 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     book=Book.find_by_id(reservation_params[:book_id])
 
-    @reservation.date = Time.zone.now + 10.minute
+    @reservation.date = Time.zone.now + 1.month
     @reservation.user = current_user
     
-  
+	
   respond_to do |format|
       
-	if @reservation.save
-	  format.html { redirect_to @reservation, notice: 'Reservation was succesfully created.' }
-          format.json { render action: 'show', status: :created, location: @reservation }
-      elsif @reservation.save
-        UserMailer.reminder(@reservation.user, @reservation.date, @reservation.book.title).deliver
-        format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
-       format.json { render action: 'show', status: :created, location: @reservation }
+if @reservation.save
+        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' } if is_reserved(book)
+        format.json { render action: 'show', status: :created, location: @reservation }		format.html { render action: 'new'}
+  	        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+  #    elsif @reservation.save
+#        UserMailer.przypomnienie(@reservation.user, @reservation.date, @reservation.book.title).deliver
+#        format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
+ #       format.json { render action: 'show', status: :created, location: @reservation }
       else
         format.html { render action: 'new' }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }

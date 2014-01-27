@@ -1,0 +1,19 @@
+<%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %><p id="notice"><%= notice %></p> 
+
+<p>
+  <strong>Book:</strong>
+  <%= link_to @reservation.book.title, @reservation.book %> 
+</p> 
+
+<p>
+  <strong>User:</strong>
+  <strong> @reservation.user.email </strong>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reservation.date %> 
+</p> 
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

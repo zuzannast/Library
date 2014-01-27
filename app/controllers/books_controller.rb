@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :set_authors, only: [:new, :edit, :update, :create]
   before_action :set_categories, only: [:new, :edit, :update, :create]
-  before_action :set_reservations, only: [:show, :index, :create ]
+  before_action :set_reservations, only: [:show, :index, :create, :new, :edit, :update, :destroy ]
 
 
   # GET /books

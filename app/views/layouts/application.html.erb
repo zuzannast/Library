@@ -10,15 +10,16 @@
 
 <ul>
     <li><%= link_to "Home", '../' %></li>
-    <li><%= link_to "Authors", '../authors' %></li>
+    <li><%= link_to "Authors", authors_path %></li>
+    <li><%= link_to "Books", books_path %></li>
+    <li><%= link_to "Categories", categories_path %></li>
+    <li><%= link_to "Entries", entries_path %></li>
 
-    <li><%= link_to "Books", '../books' %></li>
-    <li><%= link_to "Categories", '/../categories' %></li>
-    <li><%= link_to "Reservations", '/../reservations' %><% if @a == 1 %>Reserved<% end %></li>
-
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+   <strong>My account:</strong>  
+    <li><%= link_to "Reservations", reservations_path %></li>
+    <li><%= button_to "Reminder", mailer_index_path %></li>
     <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-
     <li><%= link_to "Change password", edit_user_registration_path %></li>
 
     <% else %>
@@ -26,18 +27,10 @@
     <% end %>
 
     <li class="field"><%= form_tag '/search/home', method: :get do %>
-  <%= text_field_tag :q, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %></li>
-</ul>
-
-  <% if user_signed_in? %>
-    
-    <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "login", new_user_session_path %>
-  <% end %>
-  
+	  <%= text_field_tag :q, params[:search] %>
+	  <%= submit_tag "Search", :name => nil %>
+  <% end %></li>
+</ul>  
 
 
 <%= yield %>

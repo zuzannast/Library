@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body> 
+	<h1>Reminder</h1> 
+		<h3> Hello<%= @user.email %>!</h3> 
+			<p> There are some books on your account, that you will have to return soon. </p>
+				<%if @reservations_ended.empty? %> 
+				<% else %>
+					<h2>Book that should have been already returned: </h2> <% @reservations_ended.each do |reservation| %>
+					  <p> <%= reservation.date %> <%= reservation.user.email %> <%= reservation.book.author.full_name %> - <%= reservation.book.title %> </p> 
+						<% end %> <% end %> <% if @reservations_close.empty? %> 
+					<% else %> 
+					<h2>Books you will have to return soon:</h2><% @reservations_close.each do |reservation| %>
+ 					  <p> <%= reservation.date %> <%= reservation.user.email %> <%= reservation.book.author.full_name %> - <%= reservation.book.title %> </p> 
+					<% end %> 
+				<% end %>
+  </body> 
+</html>

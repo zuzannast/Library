@@ -21,19 +21,17 @@
 	</div>
   
 
-<div id="tbox1">
-  <div class="title"><h2>Bibliographical description:</h2></div>
-<p>  <%= @book.author.last_name%><%= ', '%></p>
-<p>  <%= @book.author.first_name%><%= '. '%></p>
-<p>  <%= @book.title %><%= '. '%></p>
-<p>  <% if @book.place %><%= @book.place %><%= ': '%><% end %></p>
-<p>  <% if @book.publisher %><%= @book.publisher %><%= ', '%><% end %></p>
-<p>  <% if @book.year %><%= @book.year %><%= '. ISBN '%><% end %></p>
-<p>  <% if @book.isbn %><%= @book.isbn %><%= '. '%><% end %> </p> 
-</div>
+<div id="tbox1"> <p>
+  <strong>Bibliographical description (ISO 690):</strong>
+  <%= @book.author.last_name.capitalize %><%= ', '%>
+  <%= @book.author.first_name.capitalize %><%= '. '%>
+  <%= @book.title %><%= '. '%>
+  <% if @book.place? %><%= @book.place.capitalize %><% else %><%= '[no place inf.]' %><%= ': '%><% end %>
+  <% if @book.publisher? %><%= @book.publisher %><% else %><%= '[no publisher inf.]' %><%= ', '%><% end %>
+  <% if @book.year? %><%= @book.year %><%= '. ISBN '%><% else %><%= '[no year inf.]' %><% end %>
+  <% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %> 
 </div>
 
-
-<%= link_to 'Edit', edit_book_path(@book) %> | 
+</p> <%= link_to 'Edit', edit_book_path(@book) %> | 
 <%= link_to 'Back', books_path %>
 <%= link_to 'Add Category', new_book_category_path(@book) %>

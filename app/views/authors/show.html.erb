@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @author.first_name %>
-</p>
+<h2><%= @author.first_name %> <%= @author.last_name %></h2>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @author.last_name %>
-</p>
+<p> <strong>Biography from DBpedia:</strong><%= @biography %> </p>
 
   <strong>Books:</strong>
 <ul>

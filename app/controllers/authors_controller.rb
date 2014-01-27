@@ -1,17 +1,18 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-
+  require 'dbpedia.rb'
 
   # GET /authors
   # GET /authors.json
   def index
-    @authors = Author.all
+    @authors = Author.all.sort_by!(&:last_name)
   end
 
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @biography = Dbpedia.search(@author.full_name).collect(&:description)
   end
 
   # GET /authors/new

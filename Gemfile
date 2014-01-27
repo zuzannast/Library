@@ -4,7 +4,7 @@ gem 'devise'
 gem 'ransack'
 gem 'will_paginate', '~> 3.0.5'
 gem 'dbpedia'
-#gem 'sparql-client'
+gem 'sparql-client'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'

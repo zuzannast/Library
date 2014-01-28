@@ -1,9 +1,9 @@
 Library::Application.routes.draw do
 
+  get "mailer/reminders" 
+    post "mailer/reminders"     
   get "search/home"
-  get "static_pages/search"
-  get "static_pages/home"
-  get "static_pages/help"
+ 
   resources :categories
   
   devise_for :users
@@ -12,8 +12,8 @@ Library::Application.routes.draw do
   resources :books
   resources :categories
   resources :reservations
-  resources :mailer
-  resources :mailers 
+# resources :mailer
+# resources :mailers 
 
   root "books#index"
 
@@ -23,6 +23,7 @@ Library::Application.routes.draw do
  resources :authors do 
 	resources :books 
   end  
+
 
   #get "entries/new"
   #get "entries/create"

@@ -1,13 +1,2 @@
-<h1> The day is coming... </h1>
-	<h2>...To give back what is mine.</h2>
-
-
-        <% @reservations_ended.each do |reservation| %>
-                <p>
-                <%= reservation.date %> <%= reservation.user.email %> <%= reservation.book.author.full_name %> - <%= reservation.book.title %>
-                </p>
-        <% end %>
-        <% @reservations_close.each do |reservation| %>
-                  <p> <%= reservation.date %> <%= reservation.user.email %> <%= reservation.book.author.full_name %> - <%= reservation.book.title %> </p>
-        <% end %>
-
+<h1>Mailer#index</h1>
+<p>Find me in app/views/mailer/index.html.erb</p>

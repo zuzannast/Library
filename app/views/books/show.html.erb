@@ -8,30 +8,28 @@
 		</div>
 		<div id="tbox2">
 		  <div class="title"><h2>Author:</h2></div>
-		 	<p> <%= @book.author.full_name %> <a href="#  class="button"><%= link_to 'Show author', @book.author %></a></p>
+		 	<p> <%= @book.author.full_name %> </p>
+			<p><%= link_to 'Show author', @book.author %></p>
 		</div>
 		<div id="tbox3">
 		  <div class="title"><h2>Category:</h2></div>
 			<p><%if @book.categories.empty? %>No categories<% end %>
 		 	<% @book.categories.each do |category| %> 
-		        <%= category.name %> <a href="#"  class="button"><%= link_to 'Show category', category %></a></p>
+		        <%= category.name %></p><p><%= link_to 'Show category', category %></p>
   			<% end %>
-		
 		</div>
 	</div>
-  
 
-<div id="tbox1"> <p>
-  <strong>Bibliographical description (ISO 690):</strong>
-  <%= @book.author.last_name.capitalize %><%= ', '%>
-  <%= @book.author.first_name.capitalize %><%= '. '%>
-  <%= @book.title %><%= '. '%>
-  <% if @book.place? %><%= @book.place.capitalize %><% else %><%= '[no place inf.]' %><%= ': '%><% end %>
+<p>	<div id="isbn">
+		  <h3>Bibliographical description:</h3>
+	<%= @book.author.last_name.capitalize %><%= ', '%> <%= @book.author.first_name.capitalize.chr %><%= '. '%>  <i><%= @book.title %><%= '. '%></i>  <% if @book.place? %><%= @book.place.capitalize %><% else %><%= '[no place inf.]' %><%= ': '%><% end %>
   <% if @book.publisher? %><%= @book.publisher %><% else %><%= '[no publisher inf.]' %><%= ', '%><% end %>
   <% if @book.year? %><%= @book.year %><%= '. ISBN '%><% else %><%= '[no year inf.]' %><% end %>
-  <% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %> 
+  <% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %>. 
+	</div></p>
 </div>
 
-</p> <%= link_to 'Edit', edit_book_path(@book) %> | 
+
+<%= link_to 'Edit', edit_book_path(@book) %> | 
 <%= link_to 'Back', books_path %>
 <%= link_to 'Add Category', new_book_category_path(@book) %>

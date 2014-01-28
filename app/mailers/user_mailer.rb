@@ -4,11 +4,10 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.przypomnienie.subject
   #
-  def reminder(user, reservations_close, reservations_ended)
-    @greeting = "Hello"
+  def reminder(user)
     @user = user
-    @reservations_close = reservations_close
-	@reservations_ended = reservations_ended
-    mail(to: @user.email, subject: "Reminder")
+    @reservations = user.reservations
+
+    mail(to: @user.email, subject: 'Reminder')
   end
 end

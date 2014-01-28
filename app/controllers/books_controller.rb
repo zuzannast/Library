@@ -4,17 +4,24 @@ class BooksController < ApplicationController
   before_action :set_authors, only: [:new, :edit, :update, :create]
   before_action :set_categories, only: [:new, :edit, :update, :create]
   before_action :set_reservations, only: [:show, :index, :create, :new, :edit, :update, :destroy ]
-  require 'will_paginate/array'
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all.sort_by(&:title).paginate(:page => params[:page], :per_page => 5)
+   require 'will_paginate/array'
+   @books = Book.all.sort_by(&:title).paginate(:page => params[:page], :per_page => 5)
+   @user = current_user
+      @reservation = Reservation.new
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+
+      @user = current_user
+      if @book.reservation.nil?
+          @reservation = Reservation.new 
+	end
   end
 
   # GET /books/new
@@ -64,15 +71,21 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
+  if @book.reservation.nil?
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url }
       format.json { head :no_content }
     end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
+  else
+	respond_to do |format|
+            format.html { redirect_to books_url, notice: 'This book is reserved and cannot be deleted.' }
+            format.json { head :no_content }
+        end 
+    end    
+end
+# Use callbacks to share common setup or constraints between actions.
+private
     def set_book
       @book = Book.find(params[:id])
     end
@@ -97,27 +110,7 @@ class BooksController < ApplicationController
 	def set_reservations
         	  @reservations = Reservation.find(:all).map do |reservation|
       			[ reservation.book_id] 
-
 	end
-      end
-   
-    # def set_places
-      # @place = Place.find(:all).map do |place|
-         # [ place.name, place.id]
-      # end
-    # end
-	# def set_publishers
-      # @publishers = Publisher.find(:all).map do |publisher|
-         # [ publisher.name, publisher.id]
-      # end
-    # end
-	# def set_years
-      # @years = Year.find(:all).map do |year|
-         # [ year.name, year.id]
-      # end
-    # end def set_isbns
-      # @isbns = Isbn.find(:all).map do |isbn|
-         # [ isbn.name, isbn.id]
-      # end
-    # end
+      
+   end
 end

@@ -341,6 +341,7 @@
 	{
 		text-decoration: none;
 		color: #F67C78;
+		margin-left: 5px;
 		margin-right: 5em;
 		
 	}
@@ -392,8 +393,8 @@
 		display: inline-block;
 		padding: 0.6em 0.8em;
 		text-decoration: none;
-		font-size: 0.80em;
-		font-weight: 500;
+		font-size: 0.85em;
+		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
 	}
@@ -406,15 +407,16 @@
 	{
 		background: #F67C78;
 		color: #FFF;
+		border-radius: 5px;
 	}
 	
 
-	#menu li .field
+	#menu .field
 	{
 		display: inline-block;
-		margin: 0 5px 0 0 ;
-		position: absolute;
-		right: -6px;
+		margin: 0 2px 0 0 ;
+		position: relative;
+		border-radius: 5px;
 		background: #FFF;
 	}
 
@@ -439,7 +441,7 @@
 
 	#banner
 	{
-		padding: 13.0em 0em 2em 0em;
+		padding: 17em 0em 3em 0em;
 		position: relative;
 		margin: 0 auto;
 		margin-top:43px;
@@ -456,7 +458,7 @@
 	.wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em 5em 0em;
+		padding: 2em 0em 2em 0em;
 		background: #FFF;
 	}
 
@@ -680,6 +682,7 @@
 		overflow: hidden;
 		text-align: center;
 		color: #FFF;
+		
 	}
 	
 	#three-column h2
@@ -699,7 +702,7 @@
 		font-size: 4em;
 		width: 150px;
 		height: 150px;
-		border-radius: 100px;
+		border-radius: 150px;
 		border: 6px solid #67128F;
 		text-align: center;
 		color: #FFF;
@@ -708,16 +711,18 @@
 		
 	#three-column #tbox1,
 	#three-column #tbox2,
-	#three-column #tbox3
+	#three-column #tbox3,
+	#three-column #tbox4
 	{
 		float: left;
-		width: 320px;
+		width: 150px;
 		padding: 80px 40px 80px 40px;
 	}
 
 	#three-column #tbox1
 	{
 		background: #F67C78;
+		border-radius:10px;
 	}
 
 	#three-column #tbox1 .button
@@ -728,6 +733,8 @@
 	#three-column #tbox2
 	{
 		background: #79C4CA;
+		border-radius:10px;
+
 	}
 
 	#three-column #tbox2 .button
@@ -738,6 +745,8 @@
 	#three-column #tbox3
 	{
 		background: #A8C269;
+		border-radius:10px;
+
 	}
 
 	#three-column #tbox3 .button
@@ -745,6 +754,24 @@
 		background: #809944;
 	}
 	
+
+
+
+        #three-column #tbox4
+        {
+                background: #E4C65DA;
+                border-radius:10px;
+
+        }
+
+        #three-column #tbox4 .button
+        {
+                background: #57AEAD;
+        }
+
+
+
+
 	#three-column .title
 	{
 		text-align: center;

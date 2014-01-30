@@ -1,11 +1,10 @@
-<h1>Guest book<p id="notice"></h1><%= notice %></p>
-<p>Last entries:</p>
-<% @entries.each do |entry| %>
-  <div>
- 	<div><%= entry.name %> wrote <%= entry.created_at %>:</div>
-	<div><%= entry.comment %></div>
-  </div>
-<% end %>
+<div class="wrapper"><h1>Guest book</h1><p id="notice"><%= notice %></p>
 
-<br />
-<%= link_to "Add entry", new_entry_path %>
+<table><thead><% @entries.each do |entry| %>
+   	<th><b><%= entry.name %></th></thead><tbody><tr><td></b> wrote <%= entry.created_at %>:
+	<%= entry.comment %></tr>
+</td></tr>
+<% end %></tbody></table>
+
+<br>
+<%= link_to "Add entry", new_entry_path %></div>

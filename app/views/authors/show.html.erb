@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper"><p id="notice"><%= notice %></p>
 
 <h2><%= @author.first_name %> <%= @author.last_name %></h2>
 
@@ -14,4 +14,4 @@
 </ul>
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %> | 
-<%= link_to 'Add Book', new_author_book_path(@author,@book) %>
+<%= link_to 'Add Book', new_author_book_path(@author,@book) %></div>

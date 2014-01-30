@@ -4,7 +4,8 @@
 	<div id="three-column" class=container">
 		<div id="tbox1">
 		   <div class="title"><h2>Title:</h2></div>
-			 <p> <%= @book.title %> </p>
+			 <p> <%= @book.title %></p>
+			 <p><br></p>
 		</div>
 		<div id="tbox2">
 		  <div class="title"><h2>Author:</h2></div>
@@ -27,9 +28,10 @@
   <% if @book.year? %><%= @book.year %><%= '. ISBN '%><% else %><%= '[no year inf.]' %><% end %>
   <% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %>. 
 	</div></p>
-</div>
+
 
 
 <%= link_to 'Edit', edit_book_path(@book) %> | 
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back', books_path %> | 
 <%= link_to 'Add Category', new_book_category_path(@book) %>
+</div>

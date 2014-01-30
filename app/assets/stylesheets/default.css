@@ -3,6 +3,7 @@
 	html, body
 	{
 		height: 100%;
+		
 	}
 	
 	body
@@ -13,6 +14,7 @@
 		font-family: 'Questrial', sans-serif;
 		font-size: 12pt;
 		color: rgba(0,0,0,.6);
+		
 	}
 	
 	
@@ -50,7 +52,7 @@
 	
 	a:hover
 	{
-		text-decoration: none;
+		color: #CC2E1A;
 	}
 	
 
@@ -58,6 +60,7 @@
 	{
 		margin: 0px auto;
 		width: 1200px;
+		
 	}
 	
 
@@ -73,12 +76,12 @@
 			{
 				display: block;
 				text-align: left;
-				margin-bottom: 0.5em;
+				margin-bottom: 0px;
 			}
 			
 			form .submit
 			{
-				margin-top: 2em;
+				margin-top: 1em;
 				line-height: 1.5em;
 				font-size: 1.3em;
 			}
@@ -88,6 +91,7 @@
 			form textarea
 			{
 				position: relative;
+				
 				-webkit-appearance: none;
 				display: block;
 				border: 0;
@@ -319,6 +323,7 @@
 	{
 		position: absolute;
 		background: #FFF;
+		
 	}
 
 /*********************************************************************************/
@@ -372,6 +377,8 @@
 		top: 0;
 		border-left: 1px solid rgba(0,0,0,0.1);
 		background: #FFF;
+		border-radius:10px;
+		padding-bottom:5px;
 	}
 	
 	#menu ul
@@ -439,16 +446,16 @@
 /* Banner                                                                        */
 /*********************************************************************************/
 
-	#banner
+	/*#banner
 	{
-		padding: 17em 0em 3em 0em;
+		padding: 12em 0em 0em 0em;
 		position: relative;
 		margin: 0 auto;
-		margin-top:43px;
+		margin-top:44px;
 		background: url("banner.jpg") no-repeat center center;
 	 
 		background-size: cover;		
-	}
+	}*/
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
@@ -457,11 +464,18 @@
 
 	.wrapper
 	{
-		overflow: hidden;
-		padding: 2em 0em 2em 0em;
-		background: #FFF;
+	
+		padding: 2em 2em 2em 2em;
+		float: center;
+		/*background: #FFF;*/background: url("banner.jpg") no-repeat;
+		border-radius:10px;
+		margin-bottom:10px;
+		margin-top:50px;
+		margin-left:100px;
+		
 	}
 
+		
 	#wrapper1
 	{
 		background: #FFF;
@@ -471,7 +485,7 @@
 	{
 		overflow: hidden;
 		background: #F3F3F3;
-		padding: 5em 0em;
+		padding: 0em;
 	}
 
 /*********************************************************************************/
@@ -511,7 +525,8 @@
 	{
 		overflow: hidden;
 		background: #F3F3F3;
-		padding: 5em 0em;
+		padding: 0em;
+		float: center;
 	}
 
 	#page
@@ -530,11 +545,43 @@
 
 	#content
 	{
-		float: left;
-		width: 700px;
-		padding-right: 100px;
-		border-right: 1px solid rgba(0,0,0,.1);
+		float: center;
+		width: 1000px;
+
+		padding:50px;
 	}
+/********************************************************************************/
+/* Listing Style                                                               */
+/*******************************************************************************/
+
+    #listing
+        { 
+     }
+	
+	#listing .title h1
+	{
+	  font-size: 1.1em;
+          color: #6F6F6F;
+	}
+	
+	#info
+	{
+	font-color: #6F6F6F;
+	}
+
+    #listing .table th, td
+        {
+	font-size:1em;
+	border:1px solid #6F6F6F;
+	padding:7px 7px 7px 7px;
+	border-radius: 3px;
+	background-color:white;
+	opacity:0.8;
+	
+    }
+	
+	
+	
 	
 /*********************************************************************************/
 /* Sidebar                                                                       */
@@ -683,6 +730,7 @@
 		text-align: center;
 		color: #FFF;
 		
+		
 	}
 	
 	#three-column h2
@@ -700,8 +748,8 @@
 		background: none;
 		line-height: 150px;
 		font-size: 4em;
-		width: 150px;
-		height: 150px;
+		width: 180px;
+		height: 120px;
 		border-radius: 150px;
 		border: 6px solid #67128F;
 		text-align: center;
@@ -715,7 +763,7 @@
 	#three-column #tbox4
 	{
 		float: left;
-		width: 150px;
+		width: 195px;
 		padding: 80px 40px 80px 40px;
 	}
 

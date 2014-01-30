@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p> 
-
-<p>
+<div class="wrapper"><p>
   <strong>Book:</strong>
   <%= link_to @reservation.book.title, @reservation.book %> 
 </p> 
@@ -17,3 +15,4 @@
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %> |
+</div>

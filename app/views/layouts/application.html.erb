@@ -14,7 +14,7 @@
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="#">Library</a></h1>
+			<h1><a href="../">Library</a></h1>
 		</div>
 	<div id="menu">
 		<ul>
@@ -24,7 +24,7 @@
 		    <li><%= link_to "Entries", entries_path %></li>
 		
 		
-		  <% if user_signed_in? %>
+		  <% if user_signed_in? %> 
 			    <li><%= link_to "My account", reservations_path %></li>
 			    <li><%= button_to "Reminder", mailer_reminders_path %></li>
     			    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>

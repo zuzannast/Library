@@ -1,13 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "library@lno-reply.com"
-  # Subject can be set in your I18n file at config/locales/en.yml with the following lookup:
-  #
-  #   en.user_mailer.przypomnienie.subject
-  #
+  default from: "library_ZS_MZ@no-reply.com"
+
   def reminder(user)
     @user = user
     @reservations = user.reservations
 
-    mail(to: @user.email, subject: 'Reminder')
+    mail(to: @user.email, subject: 'Reminder from Library ZS&MZ')
   end
 end

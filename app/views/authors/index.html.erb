@@ -1,29 +1,37 @@
-<div class="wrapper"><h1>Listing authors</h1>
+<div class="listing"><div id="title"><h1>Listing authors</h1></div>
 
+<div class="table"><table>
 <table>
   <thead>
     <tr>
       <th>First name</th>
       <th>Last name</th>
       <th></th>
+      <% if user_signed_in? %>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
-
+  <tfoot>
+        <% if user_signed_in? %> <div class="link"><%= link_to 'New Author', new_author_path %></div> <% end %>
+  </tfoot>
   <tbody>
     <% @authors.each do |author| %>
       <tr>
         <td><%= author.first_name %></td>
         <td><%= author.last_name %></td>
-        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'More', author %></td>
+        
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_author_path(author) %></td>
         <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table></div>
 
-<br>
 
-<%= link_to 'New Author', new_author_path %></div> 
+
+</div>

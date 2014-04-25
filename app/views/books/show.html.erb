@@ -1,37 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<div class="wrapper">
-	<div id="three-column" class=container">
-		<div id="tbox1">
-		   <div class="title"><h2>Title:</h2></div>
-			 <p> <%= @book.title %></p>
-			 <p><br></p>
-		</div>
-		<div id="tbox2">
-		  <div class="title"><h2>Author:</h2></div>
-		 	<p> <%= @book.author.full_name %> </p>
-			<p><%= link_to 'Show author', @book.author %></p>
-		</div>
-		<div id="tbox3">
-		  <div class="title"><h2>Category:</h2></div>
-			<p><%if @book.categories.empty? %>No categories<% end %>
+<div class="listing">
+      <div id="title"><h1><%= @book.title %></h1></div><p>
+      <p><strong>Author:</strong> <%= link_to @book.author.full_name, @book.author %></p>
+      <p><strong>Category:</strong> <% if @book.categories.empty? %>No categories<% end %>
 		 	<% @book.categories.each do |category| %> 
-		        <%= category.name %></p><p><%= link_to 'Show category', category %></p>
-  			<% end %>
-		</div>
-	</div>
+		        <%= link_to category.name, category %><% end %>
 
-<p>	<div id="isbn">
+<p>	
 		  <h3>Bibliographical description:</h3>
 	<%= @book.author.last_name.capitalize %><%= ', '%> <%= @book.author.first_name.capitalize.chr %><%= '. '%>  <i><%= @book.title %><%= '. '%></i>  <% if @book.place? %><%= @book.place.capitalize %><% else %><%= '[no place inf.]' %><%= ': '%><% end %>
   <% if @book.publisher? %><%= @book.publisher %><% else %><%= '[no publisher inf.]' %><%= ', '%><% end %>
   <% if @book.year? %><%= @book.year %><%= '. ISBN '%><% else %><%= '[no year inf.]' %><% end %>
   <% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %>. 
-	</div></p>
+</p>
 
 
-
+<% if user_signed_in? %> 
 <%= link_to 'Edit', edit_book_path(@book) %> | 
 <%= link_to 'Back', books_path %> | 
-<%= link_to 'Add Category', new_book_category_path(@book) %>
+<%= link_to 'New Category', new_book_category_path(@book) %>
+<% end %>
 </div>

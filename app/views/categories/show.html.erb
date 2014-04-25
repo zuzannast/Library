@@ -1,17 +1,17 @@
-<div class="wrapper"><p id="notice"><%= notice %></p>
+<div class="listing">
 
-<p>
-  <strong>Category:</strong>
-  <%= @category.name %>
-</p>
-<p>
+<div id="title"><h1><strong>Category:</strong> <%= @category.name %></h1></div>
+</br>
 <ul>
 <% @category.books.each do |book| %>
 <li><%= link_to book.title, book %></li>
 <% end %>
 </ul>
-</p>
 
-
+  <% if user_signed_in? %> 
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %></div>
+<%= link_to 'Back', categories_path %>
+
+  <% end %>
+
+</div>

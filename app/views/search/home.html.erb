@@ -1,36 +1,36 @@
-<br><br><br><h1>Search</h1>
-
-<p>Results for: <%= @q %></p>
+<div class="listing">
+<div id="title"><h1>Search results for: <%= @q %></h1></div>
 
 <% if @books.empty? %>
-
 <% else %>
-    <strong>Books</strong>
+    <strong><ul>Books:</strong>
     <% @books.each do |book| %>
-        <p><%= link_to book.title, book %></p>
-    <% end %>
+        <li><%= link_to book.title, book %></li>
+    <% end %></ul>
 
 <%= will_paginate @books %>
-
-<% end %><br>
+</br>
+<% end %>
 
 <% if @authors.empty? %>
 <% else %>
-    <strong>Authors</strong>
+    <ul>
+    <strong>Authors:</strong>
     <% @authors.each do |author| %>
-        <p><%= link_to author.full_name, author %></p>
-    <% end %>
+        <li><%= link_to author.full_name, author %></li>
+    <% end %></ul>
 
 <%= will_paginate @authors %>
+</br>
  <% end %>
 
 <% if @categories.empty? %>
 <% else %>
-    <strong>Kategorie</strong>
+    <ul><strong>Categories:</strong>
     <% @categories.each do |categories| %>
-        <p><%= link_to categories.name, categories %></p>
-<% end %> <%= will_paginate @categories %>  
+        <li><%= link_to categories.name, categories %></li>
+<% end %></ul>
+ <%= will_paginate @categories %>  
   <% end %>
-<% if will_paginate @categories %>
 
-<% end %>
+</div>

@@ -11,51 +11,40 @@
 </head>
 <body>
 
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="../">Library</a></h1>
-		</div>
-	<div id="menu">
-		<ul>
-		    <li class="current_page_item"><%= link_to "BOOKS", '../' %></li>
-		    <li><%= link_to "Authors", authors_path %></li>
-		    <li><%= link_to "Categories", categories_path %></li>
-		    <li><%= link_to "Entries", entries_path %></li>
+<div>
+	<h1 id="header"><a href="../">Library</a></h1>
+</div>
+
+<div id="menu">
+	<ul>
+		<li><%= link_to "BOOKS", '../' %></li>
+		<li><%= link_to "Authors", authors_path %></li>
+		<li><%= link_to "Categories", categories_path %></li>
+		<li><%= link_to "Entries", entries_path %></li>
 		
-		
-		  <% if user_signed_in? %> 
-			    <li><%= link_to "My account", reservations_path %></li>
-			    <li><%= button_to "Reminder", mailer_reminders_path %></li>
-    			    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+		<% if user_signed_in? %> 
+			<li><%= link_to "My account", reservations_path %></li>
+			<li><%= button_to "Reminder", mailer_reminders_path %></li>
+    		<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 			    
 	
-		    <% else %>
+		<% else %>
 		    <li><%= link_to "Log in", new_user_session_path %></li>
 		    <% end %>
 		
-		
-		    <li class="field"><%= form_tag '/search/home', method: :get do %>
+		    <li><%= form_tag '/search/home', method: :get do %>
 			  <%= text_field_tag :q, params[:search] %>
 			  <%= submit_tag "Search", :name => nil %>
 		  <% end %></li>
-		</ul>  
-	</div>
-  </div>
-</div>	
+	</ul>  
+</div>  
 
-<div id="banner"></div>
-
-<div id="page-wrapper">
-	<div id="page" class="container">
-		<div id="content">
-			<%= yield %>
-		</div>
-	</div>
+<div id="content">	
+	<%= yield %>
 </div>
 
-<div id="copyright" class="container">
-	<p>Copyright (c) 2014 Zuzanna St. | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+<div id="footer">
+	<p>Copyright &#169; 2014 ZS&MZ </p>
 </div>
 
 

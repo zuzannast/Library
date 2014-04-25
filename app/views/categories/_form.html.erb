@@ -1,4 +1,4 @@
-<div class="wrapper"><%= form_for(@category) do |f| %>
+<div id="page-wrapper"><div class="wrapper"><%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -23,4 +23,4 @@
     <%= f.submit %>
   </div>
 <% end %>
-</div>
+</div></div>

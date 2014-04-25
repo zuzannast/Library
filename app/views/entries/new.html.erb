@@ -1,4 +1,4 @@
-<h1>New entry in guest book</h1>
+<div id="page-wrapper"><h1>New entry in guest book</h1>
 <%= form_for @entry do |f| %>
   <% if @entry.errors.any? %>
   <ul>
@@ -16,4 +16,4 @@
     <%= f.text_area :comment %>
   </p>
   <%= f.submit "Add" %>
-<% end %>
+<% end %></div>

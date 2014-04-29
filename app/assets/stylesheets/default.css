@@ -1,134 +1,134 @@
 body
-	{
-		margin: 0px;
-		padding: 0px;
-		font-size: 12pt;
-		background-color: #d1c5b7;
-		background-image: url("book.png");
-		background-repeat:no-repeat;
-       	background-position:99% 96%;
-        background-attachment:fixed;
-		background-size: 15%;
-		font-family: Calibri, sans-serif;	   
-	}
-	
+{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12pt;
+	background-color: #d1c5b7;
+	background-image: url("book.png");
+	background-repeat:no-repeat;
+	background-position:99% 96%;
+	background-attachment:fixed;
+	background-size: 15%;
+	font-family: Calibri, sans-serif;	   
+}
 
 
-	h1
-	{
-		margin: 0;
-		padding: 0;
-		color: #fff;
-	}
 
-	h2 h3 strong{
-		color: #063e53;
-	}
+h1
+{
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
 
-    strong{
-    	font-weight: bold;
-    	font-size: 20px;
-    }
+h2 h3 strong{
+	color: #063e53;
+}
 
-	
-	p, ol, ul
-	{
-		margin-top: 0;
-	}
-	
-	ol, ul
-	{
-		padding: 0;
-		list-style: none;
-	}
-	
-	p
-	{
-		line-height: 180%;
-	}
-	
-	strong
-	{
-	}
-	
-	a
-	{
-		color: #063e53;
-		font-weight: bold;
-		text-decoration: none;
-	}
-	
-	a:hover
-	{
-		color: #0193b7;
-	}
-	
+strong{
+	font-weight: bold;
+	font-size: 20px;
+}
 
-	#header
-	{
-		margin-left: 50px;
-		margin-top: 5px;
-	    font-variant: small-caps;
-        font-size: 50px;
-        font-family: Futura, sans-serif;
-		z-index: 2;
+
+p, ol, ul
+{
+	margin-top: 0;
+}
+
+ol, ul
+{
+	padding: 0;
+	list-style: none;
+}
+
+p
+{
+	line-height: 180%;
+}
+
+strong
+{
+}
+
+a
+{
+	color: #063e53;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #0193b7;
+}
+
+
+#header
+{
+	margin-left: 50px;
+	margin-top: 5px;
+	font-variant: small-caps;
+	font-size: 50px;
+	font-family: Futura, sans-serif;
+	z-index: 2;
 	
-    }
+}
 
 
 /*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
 
-	.button
-	{
-		display: inline-block;
-		margin-top: 2em;
-		padding: 0.8em 2em;
-		background: #E85D4B;
-		line-height: 1.8em;
-		letter-spacing: 1px;
-		text-decoration: none;
-		font-size: 1em;
-		color: #FFF;
-	}
-	
-	.button:before
-	{
-		display: inline-block;
-		background: #8DCB89;
-		margin-right: 1em;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-		border-radius: 20px;
-		text-align: center;
-		color: #272925;
-	}
-	
-	.button-small
-	{
-	}
-		
+.button
+{
+	display: inline-block;
+	margin-top: 2em;
+	padding: 0.8em 2em;
+	background: #E85D4B;
+	line-height: 1.8em;
+	letter-spacing: 1px;
+	text-decoration: none;
+	font-size: 1em;
+	color: #FFF;
+}
+
+.button:before
+{
+	display: inline-block;
+	background: #8DCB89;
+	margin-right: 1em;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	text-align: center;
+	color: #272925;
+}
+
+.button-small
+{
+}
+
 /*********************************************************************************/
 /* Heading Titles                                                                */
 /*********************************************************************************/
 
-	.title
-	{
-		margin-bottom: 3em;
-	}
-	
-	.title h2
-	{
-		font-size: 2em;
-	}
-	
-	.title .byline
-	{
-		font-size: 1.1em;
-		color: #6F6F6F;
-	}
+.title
+{
+	margin-bottom: 3em;
+}
+
+.title h2
+{
+	font-size: 2em;
+}
+
+.title .byline
+{
+	font-size: 1.1em;
+	color: #6F6F6F;
+}
 
 
 /*********************************************************************************/
@@ -136,129 +136,129 @@ body
 /*********************************************************************************/
 
 
-	#menu
-	{
-		position: fixed;
-		right: 0px;
-		top: 0;	
-		background: rgb(043,157,183);
-		padding-bottom:5px;
-		color: #FFF;
-	   	z-index: 1;
-	}
-	
-	#menu ul
-	{
-		display: inline-block;
-		padding: 1em 2em 0em 2em;
-		text-align: center;
-	}
-	
-	#menu li
-	{
-		display: inline-block;
-	}
-	
-	#menu li a, #menu li span
-	{
-		display: inline-block;
-		padding: 0.6em 0.8em;
-		text-decoration: none;
-		font-size: 0.85em;
-		font-weight: 600;
-		text-transform: uppercase;
-		outline: 0;
-		color: #fff;
-	}
-	
-	#menu li:hover a, #menu li.active a, #menu li.active span
-	{
-		color:#063e53;
-	}
-	
-	#menu .current_page_item a
-	{
-		
-		color: #FFF;
-		
-	}
-	
+#menu
+{
+	position: fixed;
+	right: 0px;
+	top: 0;	
+	background: rgb(043,157,183);
+	padding-bottom:5px;
+	color: #FFF;
+	z-index: 1;
+}
 
-	#menu .field
-	{
-		display: inline-block;
-		margin: 0 2px 0 0 ;
-		position: relative;
-		
-		background: #FFF;
-	}
+#menu ul
+{
+	display: inline-block;
+	padding: 1em 2em 0em 2em;
+	text-align: center;
+}
+
+#menu li
+{
+	display: inline-block;
+}
+
+#menu li a, #menu li span
+{
+	display: inline-block;
+	padding: 0.6em 0.8em;
+	text-decoration: none;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-transform: uppercase;
+	outline: 0;
+	color: #fff;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span
+{
+	color:#063e53;
+}
+
+#menu .current_page_item a
+{
+	
+	color: #FFF;
+	
+}
 
 
-	#menu li .button
-        {
-                display: inline-block;
-             
-                padding: 0.1em 0.1em;
-               
-                line-height: 0.5em;
-                letter-spacing: 1px;
-                text-decoration: none;
-                
-                color: #FFF;
-        }
-    #menu{color: #fff;}
+#menu .field
+{
+	display: inline-block;
+	margin: 0 2px 0 0 ;
+	position: relative;
+	
+	background: #FFF;
+}
+
+
+#menu li .button
+{
+	display: inline-block;
+	
+	padding: 0.1em 0.1em;
+	
+	line-height: 0.5em;
+	letter-spacing: 1px;
+	text-decoration: none;
+	
+	color: #FFF;
+}
+#menu{color: #fff;}
 
 /*********************************************************************************/
 /* Page                                                                          */
 /*********************************************************************************/
 
-	#page-wrapper
-	{
-		overflow: hidden;
-		background: #0193b7;
-		padding: 0em;
-		float: center;
-		width: 20%;
-		margin-top: 20px;
-		padding: 20px;
-		opacity: 0.6;
+#page-wrapper
+{
+	overflow: hidden;
+	background: #0193b7;
+	padding: 0em;
+	float: center;
+	width: 20%;
+	margin-top: 20px;
+	padding: 20px;
+	opacity: 0.6;
 
-	}
-    #page-wrapper a{
-     color:#FFF;
-    }
+}
+#page-wrapper a{
+	color:#FFF;
+}
 
-	#page
-	{
-	}
+#page
+{
+}
 
-	#page .title h2
-	{
-		font-size: 1.60em;
-	}
+#page .title h2
+{
+	font-size: 1.60em;
+}
 
-   #box-wrapper
-   {
-   		overflow: hidden;
-		background: #f6f6f6;
-		padding: 0em;
-		float: center;
-		width: 80%;
-		margin-top: 20px;
-		padding: 20px;
-		opacity: 0.7;
-   }
+#box-wrapper
+{
+	overflow: hidden;
+	background: #f6f6f6;
+	padding: 0em;
+	float: center;
+	width: 80%;
+	margin-top: 20px;
+	padding: 20px;
+	opacity: 0.7;
+}
 
 /*********************************************************************************/
 /* Content                                                                       */
 /*********************************************************************************/
 
-	#content
-	{
-		float: center;
-		width: 1000px;
-		padding:50px;
-	}
+#content
+{
+	float: center;
+	width: 1000px;
+	padding:50px;
+}
 
 /********************************************************************************/
 /* Listing Style                                                               */
@@ -274,7 +274,7 @@ table{
 
 table, td, th{
 	text-align: center;
-   }
+}
 
 th {
 	height: 30px;
@@ -288,35 +288,35 @@ table a {
 	color:#735d41;
 }
 
-    #listing
-        { 
-     }
-	
-	#listing .title h1
-	{
-	  font-size: 1.1em;
-          color: #6F6F6F;
-	}
-	
-	#info
-	{
-	font-color: #6F6F6F;
-	}
+#listing
+{ 
+}
 
-    #listing .table th, td
-        {
+#listing .title h1
+{
+	font-size: 1.1em;
+	color: #6F6F6F;
+}
+
+#info
+{
+	font-color: #6F6F6F;
+}
+
+#listing .table th, td
+{
 	font-size:1em;
 	padding:7px 7px 7px 7px;
 	background-color:white;
 	opacity:0.8;
-    }
-    
-    table tr:nth-child(odd) td{
-    	background-color: #f6f6f6;
-    }
-    table tr:nth-child(even) td{
-    	background-color: #fff;
-    }	
+}
+
+table tr:nth-child(odd) td{
+	background-color: #f6f6f6;
+}
+table tr:nth-child(even) td{
+	background-color: #fff;
+}	
 #entry  th {
 	background-color: rgb(043,157,183);
 	
@@ -330,24 +330,24 @@ table a {
 /* Copyright                                                                     */
 /*********************************************************************************/
 
-	#copyright
-	{
-		overflow: hidden;
-		padding: 3em 0em;
-		border-top: 1px solid rgba(255,255,255,0.08);
-		text-align: center;
-	}
+#copyright
+{
+	overflow: hidden;
+	padding: 3em 0em;
+	border-top: 1px solid rgba(255,255,255,0.08);
+	text-align: center;
+}
+
+#copyright p
+{
 	
-	#copyright p
-	{
-		
-		font-size: 0.90em;
-		color: rgba(255,255,255,0.6);
-	}
-	
+	font-size: 0.90em;
+	color: rgba(255,255,255,0.6);
+}
 
 
-	#footer{
+
+#footer{
 	position:fixed;
 	top:100%;
 	margin-top:-20px;

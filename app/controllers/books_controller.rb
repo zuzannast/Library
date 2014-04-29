@@ -11,17 +11,17 @@ class BooksController < ApplicationController
    require 'will_paginate/array'
    @books = Book.all.sort_by(&:title).paginate(:page => params[:page], :per_page => 5)
    @user = current_user
-      @reservation = Reservation.new
-  end
+   @reservation = Reservation.new
+ end
 
   # GET /books/1
   # GET /books/1.json
   def show
 
-      @user = current_user
-      if @book.reservation.nil?
-          @reservation = Reservation.new 
-	end
+    @user = current_user
+    if @book.reservation.nil?
+      @reservation = Reservation.new 
+    end
   end
 
   # GET /books/new
@@ -71,46 +71,46 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-  if @book.reservation.nil?
-    @book.destroy
-    respond_to do |format|
-      format.html { redirect_to books_url }
+    if @book.reservation.nil?
+      @book.destroy
+      respond_to do |format|
+        format.html { redirect_to books_url }
+        format.json { head :no_content }
+      end
+    else
+     respond_to do |format|
+      format.html { redirect_to books_url, notice: 'This book is reserved and cannot be deleted.' }
       format.json { head :no_content }
-    end
-  else
-	respond_to do |format|
-            format.html { redirect_to books_url, notice: 'This book is reserved and cannot be deleted.' }
-            format.json { head :no_content }
-        end 
-    end    
+    end 
+  end    
 end
 
 private
-    def set_book
-      @book = Book.find(params[:id])
-    end
+def set_book
+  @book = Book.find(params[:id])
+end
 
-   
-    def book_params
-      params.require(:book).permit(:title, :author_id, :publisher, :year, :place, :isbn, {:category_ids => []})
-    end
 
-	def set_authors
-		@authors = Author.find(:all).map do |author|
-			[ author.full_name, author.id]
-	  end 
-	end
+def book_params
+  params.require(:book).permit(:title, :author_id, :publisher, :year, :place, :isbn, {:category_ids => []})
+end
 
-	def set_categories
-		@categories = Category.find(:all).map do |category|
-		  	[ category.name, category.id]
-	  end
-	end
+def set_authors
+  @authors = Author.find(:all).map do |author|
+   [ author.full_name, author.id]
+ end 
+end
 
-	def set_reservations
-        	  @reservations = Reservation.find(:all).map do |reservation|
-      			[ reservation.book_id] 
-	end
-      
-   end
+def set_categories
+  @categories = Category.find(:all).map do |category|
+   [ category.name, category.id]
+ end
+end
+
+def set_reservations
+ @reservations = Reservation.find(:all).map do |reservation|
+   [ reservation.book_id] 
+ end
+ 
+end
 end

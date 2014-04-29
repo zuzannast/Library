@@ -20,7 +20,7 @@ class EntriesController < ApplicationController
       render new_entry_path
     end
   end
- 
+  
   private 
   def entry_params
     params.require(:entry).permit(:name, :comment)

@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
   def index
    @user = current_user
    @reservations = current_user.reservations
-  end
+ end
 
   # GET /reservations/1
   # GET /reservations/1.json
@@ -33,22 +33,22 @@ class ReservationsController < ApplicationController
     @reservation.date = Time.zone.now + 10.minute
     @reservation.user = current_user
     
-  
-  respond_to do |format|
+    
+    respond_to do |format|
       
-	if @reservation.save
-	  format.html { redirect_to @reservation, notice: 'Reservation was succesfully created.' }
-          format.json { render action: 'show', status: :created, location: @reservation }
-      elsif @reservation.save
-        UserMailer.reminder(@reservation.user, @reservation.date, @reservation.book.title).deliver
-        format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
+     if @reservation.save
+       format.html { redirect_to @reservation, notice: 'Reservation was succesfully created.' }
        format.json { render action: 'show', status: :created, location: @reservation }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
-      end
+     elsif @reservation.save
+      UserMailer.reminder(@reservation.user, @reservation.date, @reservation.book.title).deliver
+      format.html { redirect_to @reservation, notice: @reservation.user.email + ' Reservation was successfully created.' }          
+      format.json { render action: 'show', status: :created, location: @reservation }
+    else
+      format.html { render action: 'new' }
+      format.json { render json: @reservation.errors, status: :unprocessable_entity }
     end
   end
+end
 
   # PATCH/PUT /reservations/1
   # PATCH/PUT /reservations/1.json
@@ -86,23 +86,23 @@ class ReservationsController < ApplicationController
     end
     
     def is_reserved(book)
-        book= Reservation.find_by_book_id(book.id)
-        if book != nil
-            return true
-        else
-            return false
-        end
+      book= Reservation.find_by_book_id(book.id)
+      if book != nil
+        return true
+      else
+        return false
+      end
     end
     
     def set_books
-	  @books = Book.find(:all).map do |book|
-	    [ book.title, book.id ]
-	  end
-	end
-	
-	def set_users
-	  @users = User.find(:all).map do |user|
-	    [ user.id, user.email ]
-	  end
-	end
-end
+     @books = Book.find(:all).map do |book|
+       [ book.title, book.id ]
+     end
+   end
+   
+   def set_users
+     @users = User.find(:all).map do |user|
+       [ user.id, user.email ]
+     end
+   end
+ end

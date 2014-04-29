@@ -1,18 +1,15 @@
 <div class="wrapper"><p>
-  <strong>Book:</strong>
-  <%= link_to @reservation.book.title, @reservation.book %> 
+	<strong>Book:</strong>
+	<%= link_to @reservation.book.title, @reservation.book %> 
 </p> 
-
 <p>
-  <strong>User:</strong>
-  <%= @reservation.user.email %>
+	<strong>User:</strong>
+	<%= @reservation.user.email %>
 </p>
-
 <p>
-  <strong>Return date:</strong>
-  <%= @reservation.date %> 
+	<strong>Return date:</strong>
+	<%= @reservation.date %> 
 </p> 
-
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %> |
 </div>

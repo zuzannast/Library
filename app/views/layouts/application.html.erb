@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Library</title>
@@ -11,16 +11,13 @@
 </head>
 <body>
 
-<div>
-	<h1 id="header"><a href="../">Library</a></h1>
-</div>
-
 <div id="menu">
 	<ul>
-		<li><%= link_to "BOOKS", '../' %></li>
+		<li><h1 id="header"><a href="../"><u>Library</u></a></h1></li>
+		<li><%= link_to "Books", '../' %></li>
 		<li><%= link_to "Authors", authors_path %></li>
 		<li><%= link_to "Categories", categories_path %></li>
-		<li><%= link_to "Entries", entries_path %></li>
+		<li><%= link_to "Guest book", entries_path %></li>
 		
 		<% if user_signed_in? %> 
 			<li><%= link_to "My account", reservations_path %></li>

@@ -2,17 +2,17 @@ body
 	{
 		margin: 0px;
 		padding: 0px;
-		font-size: 12pt;
-		background-color: #d1c5b7;
-		background-image: url("book.png");
+		font-size: 11pt;
+		/*background-color: #d1c5b7;*/
+		background: #d1c5be;
+/*		background-image: url("book.png");
 		background-repeat:no-repeat;
        	background-position:99% 96%;
         background-attachment:fixed;
-		background-size: 15%;
-		font-family: Calibri, sans-serif;
+		background-size: 15%;*/
+		/*font-family: Verdana, sans-serif;*/
+		font-family:  Futura, sans-serif;
 	}
-	
-
 
 	h1
 	{
@@ -22,7 +22,7 @@ body
 	}
 
 	h2 h3 strong{
-		color: #063e53;
+		color: #8E6F5D;
 	}
 
     strong{
@@ -53,26 +53,28 @@ body
 	
 	a
 	{
-		color: #063e53;
+		/*color: #063e53;*/
+		color: #426b6e;
 		font-weight: bold;
 		text-decoration: none;
 	}
 	
 	a:hover
 	{
-		color: #0193b7;
+		/*color: #0193b7;*/
+		color: #395b5e;
 	}
 	
 
 	#header
 	{
-		margin-left: 50px;
-		margin-top: 9px;
-		margin-bottom: -20px;
+		/*margin-left: 50px;*/
+		/*margin-top: 9px;*/
+		/*margin-bottom: -20px;*/
 	    font-variant: small-caps;
-        font-size: 60px;
+        font-size: 32px;
         font-family: Futura, sans-serif;
-		z-index: 1;
+		/*z-index: 1;*/
 	
     }
 
@@ -114,12 +116,19 @@ body
 /*********************************************************************************/
 /* Heading Titles                                                                */
 /*********************************************************************************/
+	
+	#title {
+		font-size: 1.5em;
+		font-weight: 600;
+		padding: 5px;
+		text-align: center;
+	}
 
 	.title
 	{
 		margin-bottom: 3em;
 	}
-	
+
 	.title h2
 	{
 		font-size: 2em;
@@ -139,18 +148,21 @@ body
 
 	#menu
 	{
-		position: fixed;
+		/*position: fixed;*/
 		right: 0px;
 		top: 0;	
-		background: rgb(043,157,183);
+		/*background: rgb(043,157,183);*/
+		background: #55898e;
 		color: #FFF;
 	   	z-index: 1;
+	   	font-family: Calibri;
+	   	text-align: center;
 	}
 	
 	#menu ul
 	{
 		display: inline-block;
-		padding: 0.8em 1.2em 0em 1em;
+		padding: 0.2em 0.8em 0em 0.4em;
 		text-align: center;
 	}
 	
@@ -162,15 +174,20 @@ body
 	#menu li a, #menu li span
 	{
 		display: inline-block;
-		padding: 0.6em 0.8em;
+		padding: 0.2em 0.7em;
 		text-decoration: none;
-		font-size: 1em;
+		font-size: 1.2em;
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
 		color: #fff;
 	}
-	
+
+	#menu li h1 a {
+		text-transform: none;
+		font-variant: small-caps;
+	}
+
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
 		color:#063e53;
@@ -230,10 +247,12 @@ body
 
 table{
 	/*border-collapse:collapse;*/
-	background-color: #856941;
+	/*background-color: #856941;*/
+	background: #997d6d;
 	border-collapse:collapse;
 	width: 80%;
-	position: fixed;
+	/*position: fixed;*/
+	margin: 0 auto;
 
 }
 
@@ -252,10 +271,11 @@ td{
 }
 
 table a {
-	color:#735d41;
+	color:#71584a;
 }
 
-   
+
+
 	#listing .title h1
 	{
 	  font-size: 1.1em;
@@ -278,19 +298,45 @@ table a {
     	background-color: #fff;
     }	
 #entry  th {
-	background-color: rgb(043,157,183);
+	background-color: #55898e;
 	
 }
 
 #entry{
-	width: 80%;
+	width: 40%;
 }
-
 
 .link  
 {
 	position: relative;
 	padding-bottom:5px;
+}
+
+.entry {
+	text-align: center;
+	padding: 20px;
+	font-size: 1.4em;
+	margin-top: -40px;
+}
+
+.entry a {
+		color: #fff;
+}
+
+.entry a:hover {
+	color: #0193b7;
+}
+
+.listing {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.listing img {
+	float: left;
+	height:200px;
+	width: auto;
+	padding: 20px 40px;
 }
 
 /*********************************************************************************/
@@ -303,10 +349,26 @@ table a {
 	margin-top:-20px;
 	margin-left:0px;
 	width:100%;
-	background-color:#735d41;
+	background-color:#7f6353;
 	color:white;
 	font:10px Verdana;
 	text-align: center;
 	letter-spacing: 1px;
 
+}
+
+#left {
+	text-align: left;
+}
+
+#book a {
+	font-size: 1.5em;
+	padding: 5px;
+}
+
+
+.reserv {
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 1.4em;
 }

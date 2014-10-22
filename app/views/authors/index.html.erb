@@ -1,11 +1,9 @@
-<div class="listing"><div id="title"><h1>Listing authors</h1></div>
-
 <div class="table"><table>
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th><h1 id="title">First name</h1></th>
+      <th><h1 id="title">Last name</h1></th>
       <th></th>
       <% if user_signed_in? %>
       <th></th>
@@ -21,7 +19,7 @@
       <tr>
         <td><%= author.first_name %></td>
         <td><%= author.last_name %></td>
-        <td><%= link_to 'More', author %></td>
+        <td><%= link_to 'About author', author %></td>
         
         <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_author_path(author) %></td>
@@ -30,8 +28,5 @@
       </tr>
     <% end %>
   </tbody>
-</table></div>
-
-
-
+</table>
 </div>

@@ -1,21 +1,17 @@
-<div class="listing"><div id="title"><h1>Guest book</h1></div>
 <div class="table">
 <table id="entry">
 	<thead><% @entries.each do |entry| %>
-   		<th><b><%= entry.name %></th></b>
+   		<th><h1 id="title"><%= entry.name %> wrote:</h1></th>
    	</thead>
    	<tbody>
    		<tr>
-   			<td> wrote <%= entry.created_at %>:
-				<%= entry.comment %></tr>
+   			<td><big><%= entry.comment %></big> <br>
+   			<small>at: <%= entry.created_at %></small>
 			</td>
 		</tr><% end %>
 	</tbody>
 	<tfoot>
-		<div class="link"><%= link_to "New entry", new_entry_path %></div>
+		<div class="link entry"><%= link_to "Want to leave us a message?", new_entry_path %></div>
 	</tfoot>
 </table>
-</div>
-
-
 </div>

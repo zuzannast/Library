@@ -1,49 +1,50 @@
 <div id="page-wrapper">
-<div class="wrapper"><%= form_for(@book) do |f| %>
-  <% if @book.errors.any? %>
+  <div class="wrapper"><%= form_for(@book) do |f| %>
+    <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-      <% @book.errors.full_messages.each do |msg| %>
+        <% @book.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.select :author_id, @authors %>
-  </div>
-  <div class="field">
-    <%= f.label :category_ids %><br>
-    <%= f.select :category_ids, @categories, {}, :multiple => true %>
-  </div>
- 
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :author_id %><br>
+      <%= f.select :author_id, @authors %>
+    </div>
+    <div class="field">
+      <%= f.label :category_ids %><br>
+      <%= f.select :category_ids, @categories, {}, :multiple => true %>
+    </div>
+    
 
-  <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_field :place %>
-  </div>
     <div class="field">
-    <%= f.label :publisher %><br>
-    <%= f.text_field :publisher %>
-  </div>
+      <%= f.label :place %><br>
+      <%= f.text_field :place %>
+    </div>
     <div class="field">
-    <%= f.label :year %><br>
-    <%= f.text_field :year %>
+      <%= f.label :publisher %><br>
+      <%= f.text_field :publisher %>
+    </div>
+    <div class="field">
+      <%= f.label :year %><br>
+      <%= f.text_field :year %>
+    </div>
+    <div class="field">
+      <%= f.label :isbn %><br>
+      <%= f.text_field :isbn %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
   </div>
-      <div class="field">
-    <%= f.label :isbn %><br>
-    <%= f.text_field :isbn %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %></div>
 </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="listing">
   <%= image_tag("booksy.png") %>
   <div id="book">
@@ -27,3 +28,34 @@
     <% end %>
   </div>
   </div>
+=======
+<div id="box-wrapper">
+	<div class="wrapper">
+		<div class="container">
+			<div>
+				<div id="book">
+					<p><strong>Title:</strong> <%= @book.title %></p>
+					<p><strong>Author:</strong> <%= link_to @book.author.full_name, @book.author %></p>
+					<p><strong>Category:</strong> <% if @book.categories.empty? %>No categories<% end %>
+						<% @book.categories.each do |category| %> 
+						<%= link_to category.name, category %><% end %></p>
+				</div>
+			</div>
+			<p>	
+				<div id="isbn">
+					<h3>Bibliographical description:</h3>
+					<%= @book.author.last_name.capitalize %><%= ', '%> <%= @book.author.first_name.capitalize.chr %><%= '. '%>  <i><%= @book.title %><%= '. '%></i>  <% if @book.place? %><%= @book.place.capitalize %><% else %><%= '[no place inf.]' %><%= ': '%><% end %>
+						<% if @book.publisher? %><%= @book.publisher %><% else %><%= '[no publisher inf.]' %><%= ', '%><% end %>
+						<% if @book.year? %><%= @book.year %><%= '. ISBN '%><% else %><%= '[no year inf.]' %><% end %>
+						<% if @book.isbn? %><%= @book.isbn %><%= '. '%><% else %><%= '[no ISBN inf.]' %><% end %>. 
+				</div>
+			</p>
+		</div>
+		<% if user_signed_in? %> 
+		<%= link_to 'Edit', edit_book_path(@book) %> | 
+		<%= link_to 'Back', books_path %> | 
+		<%= link_to 'Add Category', new_book_category_path(@book) %>
+		<% end %>
+	</div>
+</div>
+>>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824

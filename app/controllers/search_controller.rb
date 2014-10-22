@@ -9,8 +9,8 @@ class SearchController < ApplicationController
     #@posts = Post.paginate(:page => params[:page])
     @categories = Category.search(name_cont: q).result(distinct: true).paginate(:per_page => 5, :page => params[:page])
   end
-    
+  
   def bold
-        
+    
   end
 end

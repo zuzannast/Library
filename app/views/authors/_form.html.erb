@@ -1,28 +1,28 @@
 <div id="page-wrapper">
 
-<div class="wrapper"><%= form_for(@author) do |f| %>
-  <% if @author.errors.any? %>
+  <div class="wrapper"><%= form_for(@author) do |f| %>
+    <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
 
       <ul>
-      <% @author.errors.full_messages.each do |msg| %>
+        <% @author.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <div class="field">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %></div>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %></div>
-</div>

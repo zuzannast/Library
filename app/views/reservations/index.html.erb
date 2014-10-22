@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="listing"><h1 class="entry">Hello <%= @user.email %>, these are your reservations:</h1>
 
 <table>
@@ -29,4 +30,33 @@
 
 <h1 class="reserv"><%= link_to "Change password and email", edit_user_registration_path %></h1>
 <h1 class="reserv"><%= link_to 'New Reservation', new_reservation_path %></h1>
+=======
+<div class="wrapper"><h1>Listing my reservations:</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Book</th>
+        <th>User</th>
+        <th>Return date</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+      <tr>
+       <td><%= link_to reservation.book.title, reservation.book %></td>
+       <td><%= reservation.user.email %></td>
+       <td><%= reservation.date %></td>
+       <td><%= link_to 'Show', reservation %></td>
+       <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+       <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+     <% end %>
+   </tbody>
+ </table>
+ <br><%= link_to "Change password and email", edit_user_registration_path %>
+ <br><%= link_to 'New Reservation', new_reservation_path %>
+>>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
 </div>

@@ -24,7 +24,11 @@
     <tr>
       <div class="info">
         <td><%= link_to book.title, book %></td>
+<<<<<<< HEAD
         <% if book.author %><td><%= link_to book.author.full_name, book.author %></td><% end %>
+=======
+        <% if book.author %><td><%= book.author.full_name %></td><% end %>
+>>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
         <% if book.categories.empty? %><td>No categories<% end %></td>
         <% book.categories.each do |category| %><td><%= link_to category.name, category %></td><% end %>
       </div>
@@ -46,4 +50,8 @@
   </tbody>
 
 </table>
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
 </div>

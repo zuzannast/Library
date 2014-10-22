@@ -1,26 +1,27 @@
-<div id="page-wrapper"><div class="wrapper"><%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
+<div id="page-wrapper">
+  <div class="wrapper">
+    <%= form_for(@category) do |f| %>
+    <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
       <ul>
-      <% @category.errors.full_messages.each do |msg| %>
+        <% @category.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
- <div class="field">
-  
-  </div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field"> </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-</div></div>
+    <div class="actions">
+     <%= f.submit %>
+   </div>
+   <% end %>
+ </div>
+</div>

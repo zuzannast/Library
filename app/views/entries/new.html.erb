@@ -1,9 +1,10 @@
-<div id="page-wrapper"><h1>New entry in guest book</h1>
-<%= form_for @entry do |f| %>
+<div id="page-wrapper">
+  <h1>New entry in guest book</h1>
+  <%= form_for @entry do |f| %>
   <% if @entry.errors.any? %>
   <ul>
     <% @entry.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <li><%= msg %></li>
     <% end %>
   </ul>
   <% end %>
@@ -16,4 +17,5 @@
     <%= f.text_area :comment %>
   </p>
   <%= f.submit "Add" %>
-<% end %></div>
+  <% end %>
+</div>

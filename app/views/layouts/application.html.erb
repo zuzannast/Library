@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Library</title>
-  <%= stylesheet_link_tag    "default", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "fonts", media: "all", "data-tubolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Library</title>
+	<%= stylesheet_link_tag    "default", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "fonts", media: "all", "data-tubolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
+<<<<<<< HEAD
 <body>
 
 <div id="menu">
@@ -47,3 +47,36 @@
 
 </body>
 </html>
+=======
+	<body>
+		<div>
+			<h1 id="header"><a href="../">Library</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><%= link_to "BOOKS", '../' %></li>
+				<li><%= link_to "Authors", authors_path %></li>
+				<li><%= link_to "Categories", categories_path %></li>
+				<li><%= link_to "Entries", entries_path %></li>	
+				<% if user_signed_in? %> 
+				<li><%= link_to "My account", reservations_path %></li>
+				<li><%= button_to "Reminder", mailer_reminders_path %></li>
+				<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+				<li><%= link_to "Log in", new_user_session_path %></li>
+				<% end %>
+				<li><%= form_tag '/search/home', method: :get do %>
+					<%= text_field_tag :q, params[:search] %>
+					<%= submit_tag "Search", :name => nil %>
+					<% end %></li>
+			</ul>  
+			</div>  
+			<div id="content">	
+				<%= yield %>
+			</div>
+			<div id="footer">
+				<p>Copyright &#169; 2014 ZS&MZ </p>
+			</div>
+	</body>
+</html>
+>>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824

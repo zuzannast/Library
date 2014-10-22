@@ -1,9 +1,9 @@
 Library::Application.routes.draw do
 
   get "mailer/reminders" 
-    post "mailer/reminders"     
+  post "mailer/reminders"     
   get "search/home"
- 
+  
   resources :categories
   
   devise_for :users
@@ -15,14 +15,14 @@ Library::Application.routes.draw do
 # resources :mailer
 # resources :mailers 
 
-  root "books#index"
+root "books#index"
 
-  resources :books do
+resources :books do
 	resources :categories
- end
- resources :authors do 
+end
+resources :authors do 
 	resources :books 
-  end  
+end  
 
 
   #get "entries/new"
@@ -86,6 +86,6 @@ Library::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	
+  
   #root :to => "entries#index"
 end

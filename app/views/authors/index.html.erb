@@ -1,5 +1,4 @@
 <div class="table"><table>
-<<<<<<< HEAD
 <table>
   <thead>
     <tr>
@@ -17,25 +16,6 @@
   </tfoot>
   <tbody>
     <% @authors.each do |author| %>
-=======
-  <table>
-    <thead>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th></th>
-        <% if user_signed_in? %>
-        <th></th>
-        <th></th>
-        <% end %>
-      </tr>
-    </thead>
-    <tfoot>
-      <% if user_signed_in? %> <div class="link"><%= link_to 'New Author', new_author_path %></div> <% end %>
-    </tfoot>
-    <tbody>
-      <% @authors.each do |author| %>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
       <tr>
         <td><%= author.first_name %></td>
         <td><%= author.last_name %></td>
@@ -46,16 +26,7 @@
         <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
-<<<<<<< HEAD
     <% end %>
   </tbody>
 </table>
-=======
-      <% end %>
-    </tbody>
-  </table></div>
-
-
-
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
 </div>

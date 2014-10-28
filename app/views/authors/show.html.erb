@@ -1,25 +1,21 @@
-<div id="box-wrapper">
-
-	<div class="wrapper">
-
-		<h2><%= @author.first_name %> <%= @author.last_name %></h2>
-
-		<p> <strong>Biography from DBpedia:</strong>
-			<% if @biography.empty? %> This author has no biography on DBpedia. <% end %>
+<div class="listing">
+<div id="title"><h1><%= @author.first_name %> <%= @author.last_name %></h1></div>
+</br>
+<p> <strong>Biography from DBpedia:</strong>
+		<% if @biography.empty? %> This author has no biography on DBpedia. <% end %>
 			<%= @biography.join(" ").gsub('\n', ' ') %> </p>
 
-			<strong>Books:</strong>
-			<ul>
-				<% @author.books.each do |book| %>
-
-				<li><%= link_to book.title, book %></li>
-
-				<% end %>
-			</ul>
-			<% if user_signed_in? %> 
-			<%= link_to 'Edit', edit_author_path(@author) %> |
-			<%= link_to 'Back', authors_path %> | 
-			<%= link_to 'Add Book', new_author_book_path(@author,@book) %>
-			<% end %>
-	</div>
+  <strong>Books:</strong>
+<ul>
+<% @author.books.each do |book| %>
+      
+        <li><%= link_to book.title, book %></li>
+      
+    <% end %>
+</ul>
+<% if user_signed_in? %> 
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %> | 
+<%= link_to 'Add Book', new_author_book_path(@author,@book) %>
+<% end %>
 </div>

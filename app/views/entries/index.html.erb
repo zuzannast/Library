@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="table">
 <table id="entry">
 	<thead><% @entries.each do |entry| %>
@@ -16,21 +15,3 @@
 	</tfoot>
 </table>
 </div>
-=======
-<div class="wrapper">
-	<h1>Guest book</h1>
-	<%= link_to "New entry", new_entry_path %>
-	<table id="entry">
-		<thead><% @entries.each do |entry| %>
-			<th><b><%= entry.name %></th></b>
-		</thead>
-		<tbody>
-			<tr>
-				<td> wrote <%= entry.created_at %>:
-					<%= entry.comment %></tr>
-				</td>
-			</tr><% end %>
-		</tbody>
-	</table>
-</div>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824

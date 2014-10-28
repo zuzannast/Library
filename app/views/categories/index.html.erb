@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="table"><table>
   <thead>
     <tr>
@@ -15,38 +14,17 @@
   </tfoot>
   <tbody>
     <% @categories.each do |category| %>
-=======
-<div class="listing">
-  <div id="title">
-    <h1>Listing categories</h1>
-  </div>
-  <div class="table"><table>
-    <thead>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
-      <tr>
-        <th>Name</th>
-        <% if user_signed_in? %>
-        <th></th>
-        <th></th>
-        <% end %>
-      </tr>
-    </thead>
-
-    <tfoot>
-      <% if user_signed_in? %><div class="link"><%= link_to 'New Category', new_category_path %> </div><% end %>
-    </tfoot>
-    <tbody>
-      <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name, category %></td>
-
+      
         <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_category_path(category) %></td>
+            <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
-      <% end %>
-    </tbody>
-  </table>
-  </div>
+    <% end %>
+  </tbody>
+</table></div>
+
+
 </div>

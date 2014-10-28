@@ -1,33 +1,36 @@
-<div class="page-wrapper">
-    <h1>Search results for: <%= @q %></h1>
-    <% if @books.empty? %>
-    <% else %>
-    <strong>
-        <ul>Books:</strong>
-            <% @books.each do |book| %>
-            <li><%= link_to book.title, book %></li>
-            <% end %>
-        </ul>
-        <%= will_paginate @books %>
-    <% end %>
-    <% if @authors.empty? %>
-    <% else %>
-    <ul>
-        <strong>Authors:</strong>
-        <% @authors.each do |author| %>
-        <li><%= link_to author.full_name, author %></li>
-        <% end %>
-    </ul>
-    <%= will_paginate @authors %>
+<div class="listing">
+<div id="title"><h1>Search results for: <%= @q %></h1></div>
+
+<% if @books.empty? %>
+<% else %>
+    <strong><ul>Books:</strong>
+    <% @books.each do |book| %>
+        <li><%= link_to book.title, book %></li>
+    <% end %></ul>
+
+<%= will_paginate @books %>
+</br>
 <% end %>
+
+<% if @authors.empty? %>
+<% else %>
+    <ul>
+    <strong>Authors:</strong>
+    <% @authors.each do |author| %>
+        <li><%= link_to author.full_name, author %></li>
+    <% end %></ul>
+
+<%= will_paginate @authors %>
+</br>
+ <% end %>
+
 <% if @categories.empty? %>
 <% else %>
-<ul>
-    <strong>Categories:</strong>
+    <ul><strong>Categories:</strong>
     <% @categories.each do |categories| %>
-    <li><%= link_to categories.name, categories %></li>
-    <% end %>
-</ul>
-<%= will_paginate @categories %>  
-<% end %>
+        <li><%= link_to categories.name, categories %></li>
+<% end %></ul>
+ <%= will_paginate @categories %>  
+  <% end %>
+
 </div>

@@ -8,7 +8,6 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
-<<<<<<< HEAD
 <body>
 
 <div id="menu">
@@ -18,25 +17,25 @@
 		<li><%= link_to "Authors", authors_path %></li>
 		<li><%= link_to "Categories", categories_path %></li>
 		<li><%= link_to "Guest book", entries_path %></li>
-		
-		<% if user_signed_in? %> 
+
+		<% if user_signed_in? %>
 			<li><%= link_to "My account", reservations_path %></li>
 			<li><%= button_to "Reminder", mailer_reminders_path %></li>
     		<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-			    
-	
+
+
 		<% else %>
 		    <li><%= link_to "Log in", new_user_session_path %></li>
 		    <% end %>
-		
+
 		    <li><%= form_tag '/search/home', method: :get do %>
 			  <%= text_field_tag :q, params[:search] %>
 			  <%= submit_tag "Search", :name => nil %>
 		  <% end %></li>
-	</ul>  
-</div>  
+	</ul>
+</div>
 
-<div id="content">	
+<div id="content">
 	<%= yield %>
 </div>
 
@@ -47,36 +46,3 @@
 
 </body>
 </html>
-=======
-	<body>
-		<div>
-			<h1 id="header"><a href="../">Library</a></h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li><%= link_to "BOOKS", '../' %></li>
-				<li><%= link_to "Authors", authors_path %></li>
-				<li><%= link_to "Categories", categories_path %></li>
-				<li><%= link_to "Entries", entries_path %></li>	
-				<% if user_signed_in? %> 
-				<li><%= link_to "My account", reservations_path %></li>
-				<li><%= button_to "Reminder", mailer_reminders_path %></li>
-				<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-				<% else %>
-				<li><%= link_to "Log in", new_user_session_path %></li>
-				<% end %>
-				<li><%= form_tag '/search/home', method: :get do %>
-					<%= text_field_tag :q, params[:search] %>
-					<%= submit_tag "Search", :name => nil %>
-					<% end %></li>
-			</ul>  
-			</div>  
-			<div id="content">	
-				<%= yield %>
-			</div>
-			<div id="footer">
-				<p>Copyright &#169; 2014 ZS&MZ </p>
-			</div>
-	</body>
-</html>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824

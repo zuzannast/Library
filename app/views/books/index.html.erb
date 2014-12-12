@@ -14,8 +14,8 @@
   </thead>
 
   <tfoot>
-    <% if user_signed_in? %> 
-    <div class="link"><%= link_to 'New Book', new_book_path %></div> 
+    <% if user_signed_in? %>
+    <div class="link"><%= link_to 'New Book', new_book_path %></div>
     <% end %>
   </tfoot>
 
@@ -24,11 +24,7 @@
     <tr>
       <div class="info">
         <td><%= link_to book.title, book %></td>
-<<<<<<< HEAD
         <% if book.author %><td><%= link_to book.author.full_name, book.author %></td><% end %>
-=======
-        <% if book.author %><td><%= book.author.full_name %></td><% end %>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
         <% if book.categories.empty? %><td>No categories<% end %></td>
         <% book.categories.each do |category| %><td><%= link_to category.name, category %></td><% end %>
       </div>
@@ -38,20 +34,16 @@
       </div>
 
 
-      <% if user_signed_in? %> 
+      <% if user_signed_in? %>
       <div class="buttons">
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </div> 
+      </div>
       <% end %>
 
     </tr>
-    <% end %> 
+    <% end %>
   </tbody>
 
 </table>
-<<<<<<< HEAD
-=======
-</div>
->>>>>>> 0b3e13ed41dcaf8137c740399bbcca57255b8824
 </div>

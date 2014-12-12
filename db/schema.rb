@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140127143736) do
     t.integer  "categories_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
     t.string   "place"
     t.string   "year"
     t.string   "isbn"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140127143736) do
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
   add_index "books", ["categories_id"], name: "index_books_on_categories_id"
+  add_index "books", ["category_id"], name: "index_books_on_category_id"
 
   create_table "books_categories", id: false, force: true do |t|
     t.integer "book_id"
@@ -44,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140127143736) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.integer  "book_id"
+    t.integer  "books_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

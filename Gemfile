@@ -50,6 +50,7 @@ end
 
 # Use unicorn as the app server
 gem 'unicorn'
+
 gem 'rack-timeout'
 
 # Use Capistrano for deployment
